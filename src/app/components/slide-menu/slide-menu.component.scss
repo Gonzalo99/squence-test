@@ -1,0 +1,42 @@
+@import "../../../assets/vars";
+
+.slide-left-panel {
+  width: 360px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 20px;
+  background-color: #162543;
+  font-size: 13px;
+  color: #797977;
+  margin-left: -360px;
+  .slide-left-panel__content {
+    .content__close {
+      font-size: 28px;
+      color: $icons;
+      cursor: pointer;
+      float: right;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 45px;
+      li a {
+        display: block;
+        padding: 6px 0;
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          color: $secundary;
+          font-weight: bold;
+        }
+      }
+    }
+    .active {
+      color: $secundary !important;
+      font-weight: bold;
+    }
+  }
+}
