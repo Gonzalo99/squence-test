@@ -1,3 +1,7 @@
 {
-  "HELLO_WORLD": "HOLA MUNDO"
+  "MENU": {
+    "SONGS": "Canciones",
+    "ARTISTS": "Artistas",
+    "RECORD-COMPANIES": "Compañías discográficas"
+  }
 }

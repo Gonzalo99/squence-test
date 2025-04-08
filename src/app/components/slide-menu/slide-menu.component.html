@@ -1,0 +1,13 @@
+<div id="left-menu-panel" class="slide-left-panel" [ngClass]="{ 'open': visible }">
+  <div class="slide-left-panel__content">
+    <div class="content__close">
+      <i class="bi bi-x" (click)="closeMenu()"></i>
+    </div>
+    <h2>Music App</h2>
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.url" [routerLinkActive]="['active']" (click)="slideMenu()">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

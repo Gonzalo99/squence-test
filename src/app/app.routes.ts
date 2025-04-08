@@ -12,12 +12,12 @@ export const routes: Routes = [
     //   }
     // ]
   },
-  // {
-  //   path: 'artists',
-  //   loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent)
-  // },
-  // {
-  //   path: 'record-companies',
-  //   loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent)
-  // }
+  {
+    path: 'artists',
+    loadComponent: () => import('./pages/artists/artists.component').then(m => m.ArtistsComponent)
+  },
+  {
+    path: 'record-companies',
+    loadComponent: () => import('./pages/record-companies/record-companies.component').then(m => m.RecordCompaniesComponent)
+  }
 ];
