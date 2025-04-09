@@ -1,0 +1,35 @@
+@import "../../../assets/vars";
+
+.song {
+  border-radius: 13px;
+  padding: 20px;
+  width: 300px;
+  background-color: $secundary;
+  margin-bottom: 20px;
+  .song__image {
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 13px;
+      object-fit: cover;
+    }
+  }
+  .song__genres {
+    display: flex;
+    min-width: 200px;
+    .genres__genre {
+      font-size: 10px;
+      margin-right: 5px;
+    }
+  }
+  .song__rate {
+    i {
+      color: $icons;
+    }
+    span {
+      margin-left: 2px;
+      font-size: 14px;
+      color: $secondary_text;
+    }
+  }
+}
