@@ -1,9 +1,9 @@
 <!-- Header -->
-<div class="header">
+<div *ngIf="isRootUrlInMenu()" class="header">
   <div class="header__icon-menu">
     <i class="bi bi-list" (click)="openMenu()"></i>
   </div>
   <div *ngIf="rootUrl && rootUrl != ''" class="header__title">{{ 'MENU.' + rootUrl | translate }}</div>
 </div>
 <!-- Slide Left Panel -->
-<app-slide-menu></app-slide-menu>
+<app-slide-menu [menuItems]="menuItems"></app-slide-menu>

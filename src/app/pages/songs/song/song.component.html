@@ -1,0 +1,35 @@
+<div class="song">
+  <div class="song__return">
+    <a [routerLink]="['/songs']">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="song__title">{{ song?.title }}</div>
+      <div class="song__image">
+        <img height="450" [src]="song?.poster" alt="Song Image" />
+      </div>
+      <div class="song__genres">
+        <div *ngFor="let genre of song?.genre">#{{ genre }}</div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="song__info">
+        <div class="info__title">{{ 'SONG.RECORD-COMPANIE' | translate }}</div>
+        <div class="d-flex">
+          <div class="info__item" *ngFor="let companie of companiesSong()">
+            {{ companie.name }}
+          </div>
+        </div>
+      </div>
+      <div class="song__info">
+        <div class="info__title">{{ 'SONG.RELEASE-DATE' | translate }}</div>
+        <div class="info__text">
+          {{  song?.year }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

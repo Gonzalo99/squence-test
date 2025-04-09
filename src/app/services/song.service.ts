@@ -32,4 +32,21 @@ export class SongService {
 
     return songs;
   }
+
+  async getSong(id: string): Promise<ISong | undefined> {
+    let song: undefined | Song;
+
+    try {
+      const response = await firstValueFrom(
+        this.http.get<SongDTO>(`${environment.apiUrl}/songs/${id}`)
+      );
+
+      song = this.songMapper.map(plainToClass(SongDTO, response));
+    } catch (error) {
+      console.error('Error fetching song:', error);
+      return undefined;
+    }
+
+    return song;
+  }
 }

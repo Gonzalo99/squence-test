@@ -17,6 +17,7 @@ export class SongsComponent {
   constructor(private _songService: SongService) {}
 
   async ngOnInit() {
+    // Fetch the songs
     this.songs = await this._songService.getSongs();
   }
 }
