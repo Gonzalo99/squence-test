@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { CompanieService } from '../../../services/companie.service';
 import { Companie } from '../../../models/companie.model';
+import { ModalService } from '../../../services/utils/modal.service';
 
 @Component({
   selector: 'app-song',
@@ -20,16 +21,22 @@ export class SongComponent {
   constructor(
     private route: ActivatedRoute,
     private _songService: SongService,
-    private _companieService: CompanieService
+    private _companieService: CompanieService,
+    private _modalService: ModalService
   ) {}
 
   async ngOnInit() {
     const songId = this.route.snapshot.paramMap.get('id-song');
+    const dialogRef = this._modalService.openLoader();
     if (songId) {
       // Fetch the song details
       this.song = await this._songService.getSong(songId);
       // Fetch the companies
       this.companies = await this._companieService.getCompanies();
+      // Close the loader modal
+      setTimeout(() => {
+        dialogRef.close(); // This timeout is just for demonstration purposes
+      }, 2000);
     }
   }
 
