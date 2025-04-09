@@ -17,12 +17,19 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   public rootUrl: string = '';
+  public menuItems: Array<{ name: string, url: string }> = [];
 
   constructor(private readonly store: Store<MenuState>, private router: Router) {
+    this.menuItems = [
+      { name: 'SONGS', url: '/songs' },
+      { name: 'ARTISTS', url: '/artists' },
+      { name: 'RECORD-COMPANIES', url: '/record-companies' },
+    ];
+
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(event => {
-      this.rootUrl = (event as NavigationEnd).url.substring(1).toUpperCase();
+      this.rootUrl = (event as NavigationEnd).url.split('/')[1].toUpperCase();
     });
   }
 
@@ -31,5 +38,10 @@ export class HeaderComponent {
       visible: true
     };
     this.store.dispatch(updateMenu({ menu: menu }));
+  }
+
+  // Function to check if the current root URL is in the menu items
+  isRootUrlInMenu(): boolean {
+    return this.menuItems.some(item => item.name === this.rootUrl);
   }
 }

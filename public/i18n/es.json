@@ -3,5 +3,11 @@
     "SONGS": "Canciones",
     "ARTISTS": "Artistas",
     "RECORD-COMPANIES": "Compañías discográficas"
+  },
+  "SONG": {
+    "RECORD-COMPANIE": "Compañía discográfica",
+    "GENRE": "Género",
+    "COUNTRY": "País",
+    "RELEASE-DATE": "Fecha de lanzamiento"
   }
 }

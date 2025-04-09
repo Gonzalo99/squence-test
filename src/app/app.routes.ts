@@ -5,12 +5,10 @@ export const routes: Routes = [
   {
     path: 'songs',
     loadComponent: () => import('./pages/songs/songs.component').then(m => m.SongsComponent),
-    // children: [
-    //   {
-    //     path: ':id-song',
-    //     loadComponent: () => import('./settings/settings.component').then(m => m.SettingsComponent)
-    //   }
-    // ]
+  },
+  {
+    path: 'song/:id-song',
+    loadComponent: () => import('./pages/songs/song/song.component').then(m => m.SongComponent),
   },
   {
     path: 'artists',

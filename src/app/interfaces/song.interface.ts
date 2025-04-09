@@ -1,5 +1,5 @@
 export interface ISong {
-  id: number;
+  id: string;
   title: string;
   poster: string;
   genre: string[];

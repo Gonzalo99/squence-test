@@ -16,9 +16,11 @@ import { updateMenu } from '../../states/menu/action/menu.action';
   styleUrl: './slide-menu.component.scss'
 })
 export class SlideMenuComponent {
+  @Input() menuItems: Array<{ name: string; url: string; }> | undefined;
+
   public visible: boolean = false;
   public menuObs: Observable<IMenu>;
-  public menuItems: Array<{ name: string, url: string }> = [];
+  
 
   constructor(private readonly store: Store<MenuState>) {
     this.menuObs = this.store.pipe(select(selectMenu));
@@ -26,11 +28,6 @@ export class SlideMenuComponent {
       this.visible = menu.visible;
       this.slideMenu();
     });
-    this.menuItems = [
-      { name: 'SONGS', url: '/songs' },
-      { name: 'ARTISTS', url: '/artists' },
-      { name: 'RECORD-COMPANIES', url: '/record-companies' },
-    ];
   }
 
   closeMenu() {
@@ -40,6 +37,8 @@ export class SlideMenuComponent {
     this.store.dispatch(updateMenu({ menu: menu }));
   }
 
+  // Function to slide the menu in and out
+  // This function uses GSAP library to animate the menu sliding
   slideMenu() {
     if(!this.visible) {
       gsap.to("#left-menu-panel", {
