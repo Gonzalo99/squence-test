@@ -1,3 +1,7 @@
-<div>
-    <h1>Canciones</h1>
+<div class="list-songs">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let song of songs">
+      <app-preview-song [song]="song" class="d-flex justify-content-center"></app-preview-song>
+    </div>
+  </div>
 </div>
