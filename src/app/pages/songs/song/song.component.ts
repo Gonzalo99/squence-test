@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Song } from '../../../models/song.model';
 import { SongService } from '../../../services/song.service';
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CompanieService } from '../../../services/companie.service';
 import { Companie } from '../../../models/companie.model';
 import { ModalService } from '../../../services/utils/modal.service';
+import { DefaultModalComponent } from '../../../components/modals/default/default.component';
+import { MatDialogRef } from '@angular/material/dialog';
+import { firstValueFrom } from 'rxjs';
+import { SnackService } from '../../../services/utils/snack.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-song',
@@ -20,9 +25,12 @@ export class SongComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private _songService: SongService,
     private _companieService: CompanieService,
-    private _modalService: ModalService
+    private _modalService: ModalService,
+    private _snackService: SnackService,
+    private translate: TranslateService
   ) {}
 
   async ngOnInit() {
@@ -48,5 +56,40 @@ export class SongComponent {
       return filteredCompanies;
     }
     return [];
+  }
+
+  deleteSong() {
+    try {
+      const modal: MatDialogRef<DefaultModalComponent> = this._modalService.open(
+        'SONG.DELETE.DELETE_TITLE',
+        'SONG.DELETE.DELETE_CONTENT',
+        'MODAL.CONFIRM',
+        'MODAL.CANCEL'
+      );
+      modal.afterClosed().subscribe(async (isOk: boolean) => {
+        if (isOk && this.song?.id) {
+          const response = await this._songService.deleteSong(this.song.id);
+          
+          this._snackService.show(
+            this.translate.instant('SONG.DELETE.DELETE_SUCCESS'),
+            '',
+            {
+              duration: 5000,
+            }
+          );
+          this.router.navigate(['/songs']);
+        }
+      });
+    } catch (e: any) {
+      this.handleError('ERROR.UNEXPECTED_ERROR');
+    }
+  }
+
+  async handleError(error: string) {
+    const errorMessage = await firstValueFrom(this.translate.get(error));
+    this._snackService.show(errorMessage, '', {
+      duration: 5000,
+      panelClass: ['warning-snackbar'],
+    });
   }
 }

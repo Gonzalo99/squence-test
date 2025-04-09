@@ -8,6 +8,20 @@
     "RECORD-COMPANIE": "Compañía discográfica",
     "GENRE": "Género",
     "COUNTRY": "País",
-    "RELEASE-DATE": "Fecha de lanzamiento"
+    "RELEASE-DATE": "Fecha de lanzamiento",
+    "DELETE": {
+      "DELETE_TITLE": "Eliminar canción",
+      "DELETE_CONTENT": "¿Está seguro de que desea eliminar esta canción?",
+      "DELETE_SUCCESS": "Canción eliminada con éxito"
+    }
+  },
+  "MODAL": {
+    "OK": "Ok",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
+  },
+  "ERROR": {
+    "NOT_FOUND": "No se encontró la canción",
+    "UNKNOWN_ERROR": "Se ha producido un error"
   }
 }

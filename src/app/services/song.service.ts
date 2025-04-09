@@ -49,4 +49,8 @@ export class SongService {
 
     return song;
   }
+
+  deleteSong(id: string) {
+    return firstValueFrom(this.http.delete(`${environment.apiUrl}/songs/${id}`));
+  }
 }
