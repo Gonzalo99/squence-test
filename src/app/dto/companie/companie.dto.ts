@@ -1,9 +1,7 @@
 import { IsNotEmpty, IsNumber, IsString, IsArray, IsOptional } from 'class-validator';
 
 export class CompanieDTO {
-  @IsNotEmpty()
-  @IsString()
-  id!: string;
+  id!: any;
 
   @IsNotEmpty()
   @IsString()

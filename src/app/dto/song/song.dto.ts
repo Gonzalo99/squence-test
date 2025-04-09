@@ -1,9 +1,7 @@
 import { IsArray, IsNotEmpty, IsNumber, IsString, IsUrl } from "class-validator";
 
 export class SongDTO {
-  @IsNotEmpty()
-  @IsString()
-  id!: string;
+  id!: any;
 
   @IsNotEmpty()
   @IsString()

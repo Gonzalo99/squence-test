@@ -5,3 +5,16 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-snack-bar-container {
+  &.warning-snackbar {
+    --mdc-snackbar-container-color: #ef5350;
+    --mdc-snackbar-supporting-text-color: #fff;
+    text-align: center !important;
+  }
+  &.success-snackbar {
+    --mdc-snackbar-container-color: #26a69a;
+    --mdc-snackbar-supporting-text-color: #fff;
+    text-align: center !important;
+  }
+}
