@@ -4,10 +4,11 @@ import { SongService } from '../../services/song.service';
 import { Song } from '../../models/song.model';
 import { PreviewSongComponent } from '../../components/preview-song/preview-song.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-songs',
-  imports: [CommonModule, TranslateModule, PreviewSongComponent],
+  imports: [CommonModule, TranslateModule, PreviewSongComponent, RouterModule],
   templateUrl: './songs.component.html',
   styleUrl: './songs.component.scss'
 })

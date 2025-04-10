@@ -85,6 +85,12 @@ export class SongComponent {
     }
   }
 
+  editSong() {
+    if (this.song) {
+      this.router.navigate(['/edit-song', this.song.id]);
+    }
+  }
+
   async handleError(error: string) {
     const errorMessage = await firstValueFrom(this.translate.get(error));
     this._snackService.show(errorMessage, '', {
