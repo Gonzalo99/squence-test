@@ -1,9 +1,8 @@
 {
   "songs": [
     {
-      "id": "1",
       "title": "Who did you think i was",
-      "poster": "http://dummyimage.com/400x600.png/cc0000/ffffff",
+      "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
       "genre": [
         "Pop",
         "Rock",
@@ -12,7 +11,8 @@
       "year": 2007,
       "duration": 424,
       "rating": 9.27,
-      "artist": 1
+      "artist": 1,
+      "id": "1"
     },
     {
       "id": "2",
@@ -158,13 +158,14 @@
       "title": "Yellow Submarine",
       "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
       "genre": [
-        "Pop"
+        "Pop",
+        "Rock"
       ],
-      "year": 2017,
-      "duration": 6,
-      "rating": 40,
+      "year": 2018,
+      "duration": 2,
+      "rating": 56,
       "artist": 2,
-      "id": "3063"
+      "id": "d38f"
     }
   ],
   "artists": [
@@ -176,8 +177,8 @@
       "img": "http://dummyimage.com/600x400.png/dddddd/000000",
       "rating": 9.03,
       "songs": [
-        1,
-        6
+        "1",
+        "6"
       ]
     },
     {
@@ -187,9 +188,9 @@
       "birthdate": "19/04/1975",
       "rating": 2.43,
       "songs": [
-        2,
-        3,
-        3063
+        "2",
+        "3",
+        "d38f"
       ],
       "img": "http://dummyimage.com/600x400.png/5fa2dd/000000"
     },
@@ -200,10 +201,9 @@
       "birthdate": "10/04/1986",
       "rating": 7.92,
       "songs": [
-        2,
-        3,
-        8,
-        3063
+        "2",
+        "3",
+        "8"
       ],
       "img": null
     },
@@ -215,8 +215,8 @@
       "img": "http://dummyimage.com/600x400.png/4fa25d/000000",
       "rating": 4.37,
       "songs": [
-        4,
-        8
+        "4",
+        "8"
       ]
     },
     {
@@ -226,8 +226,8 @@
       "birthdate": "30/12/1990",
       "rating": 3.92,
       "songs": [
-        5,
-        7
+        "5",
+        "7"
       ],
       "img": "https://dummyimage.com/600x400.png/2f125d/ffffff"
     },
@@ -239,7 +239,7 @@
       "img": "https://dummyimage.com/600x400.png/bf125d/ffffff",
       "rating": 8.79,
       "songs": [
-        9
+        "9"
       ]
     },
     {
@@ -250,7 +250,7 @@
       "img": "https://dummyimage.com/600x400.png/1f12ff/ffffff",
       "rating": 10,
       "songs": [
-        11
+        "11"
       ]
     }
   ],
@@ -263,8 +263,8 @@
       "employees": 2000,
       "rating": 8.32,
       "songs": [
-        2,
-        3
+        "2",
+        "3"
       ]
     },
     {
@@ -275,8 +275,8 @@
       "employees": 611,
       "rating": 8.19,
       "songs": [
-        4,
-        8
+        "4",
+        "8"
       ]
     },
     {
@@ -287,9 +287,9 @@
       "employees": 511,
       "rating": 8.09,
       "songs": [
-        5,
-        6,
-        7
+        "5",
+        "6",
+        "7"
       ]
     },
     {
@@ -300,8 +300,8 @@
       "employees": 42,
       "rating": 9.26,
       "songs": [
-        8,
-        9
+        "8",
+        "9"
       ]
     },
     {

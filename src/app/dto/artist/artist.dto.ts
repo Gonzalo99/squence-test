@@ -1,7 +1,9 @@
 import { IsNotEmpty, IsString, IsNumber, IsArray, IsUrl, IsOptional } from 'class-validator';
 
 export class ArtistDTO {
-  id!: any;
+  @IsNotEmpty()
+  @IsString()
+  id!: string;
  
   @IsNotEmpty()
   @IsString()
@@ -25,6 +27,6 @@ export class ArtistDTO {
 
   @IsNotEmpty()
   @IsArray()
-  @IsNumber({}, { each: true })
-  songs!: number[];
+  @IsString({ each: true })
+  songs!: string[];
 }

@@ -6,6 +6,6 @@ export class Companie {
     public createYear: number,
     public employees: number,
     public rating: number,
-    public songs: number[]
+    public songs: string[]
   ) {}
 }

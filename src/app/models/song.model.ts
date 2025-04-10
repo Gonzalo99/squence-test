@@ -1,6 +1,6 @@
 export class Song {
   constructor(
-    public readonly id: any,
+    public readonly id: string,
     public title: string,
     public poster: string,
     public genre: string[],

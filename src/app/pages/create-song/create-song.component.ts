@@ -154,13 +154,13 @@ export class CreateSongComponent {
         // Remove the old artist
         let artist = this.artists?.find((artist) => artist.id == String(this.song?.artist));
         if (artist) {
-          artist.songs = artist.songs.filter((songId) => songId !== Number(this.song?.id));
+          artist.songs = artist.songs.filter((songId) => songId !=  this.song?.id);
           await this._artistService.updateArtist(artist.id, artist);
         }
         // Add the new artist
         artist = this.artists?.find((artist) => artist.id === this.form.value.artist);
         if (artist && response) {
-          artist.songs.push(Number(response.id));
+          artist.songs.push(response.id);
           await this._artistService.updateArtist(artist.id, artist);
           this.successfulMessage();
           this.router.navigate(['/songs']);
@@ -181,9 +181,9 @@ export class CreateSongComponent {
     .subscribe(async (response) => {
       /** ¡IMPORTANT! **/
       // This update should be done in the backend for more efficiency and not in the frontend but for now we do it here
-      let artist = this.artists?.find((artist) => artist.id === this.form.value.artist);
+      let artist = this.artists?.find((artist) => artist.id == this.form.value.artist);
       if (artist && response) {
-        artist.songs.push(Number(response.id));
+        artist.songs.push(response.id);
         await this._artistService.updateArtist(artist.id, artist);
         this.successfulMessage();
         this.router.navigate(['/songs']);

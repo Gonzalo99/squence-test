@@ -1,7 +1,9 @@
 import { IsNotEmpty, IsNumber, IsString, IsArray, IsOptional } from 'class-validator';
 
 export class CompanieDTO {
-  id!: any;
+  @IsNotEmpty()
+  @IsString()
+  id!: string;
 
   @IsNotEmpty()
   @IsString()
@@ -25,6 +27,6 @@ export class CompanieDTO {
 
   @IsNotEmpty()
   @IsArray()
-  @IsNumber({}, { each: true })
-  songs!: number[];
+  @IsString({ each: true })
+  songs!: string[];
 }
