@@ -5,5 +5,5 @@ export interface ICompanie {
   createYear: number;
   employees: number;
   rating: number;
-  songs: number[];
+  songs: string[];
 }

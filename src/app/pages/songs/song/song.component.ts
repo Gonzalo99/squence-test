@@ -52,7 +52,7 @@ export class SongComponent {
   // This function filters the companies based on the song ID
   companiesSong(): Companie[] {
     if (this.song && this.companies) {
-      const filteredCompanies = this.companies.filter(company => company.songs.includes(Number(this.song?.id)));
+      const filteredCompanies = this.companies.filter(company => this.song?.id && company.songs.includes(this.song.id));
       return filteredCompanies;
     }
     return [];

@@ -9,3 +9,5 @@ v22.0.0
 * npm i
 * npm run start
 * npm run api-server
+
+# !!IMPORTANT - Use de db that is loaded, the ids is adapted to string

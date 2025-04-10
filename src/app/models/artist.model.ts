@@ -1,11 +1,11 @@
 export class Artist {
   constructor(
-    public readonly id: any,
+    public readonly id: string,
     public name: string,
     public bornCity: string,
     public birthdate: string,
     public rating: number,
-    public songs: number[],
+    public songs: string[],
     public img?: string,
   ) {}
 }

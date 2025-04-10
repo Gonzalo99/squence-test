@@ -1,9 +1,9 @@
 export interface IArtist {
-  id: any;
+  id: string;
   name: string;
   bornCity: string;
   birthdate: string;
   rating: number;
-  songs: number[];
+  songs: string[];
   img?: string;
 }
