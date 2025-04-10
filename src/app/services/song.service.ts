@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, Observable } from "rxjs";
 import { environment } from "../../environments/environment";
 import { SongDTO } from "../dto/song/song.dto";
 import { Song } from "../models/song.model";
@@ -52,5 +52,13 @@ export class SongService {
 
   deleteSong(id: string) {
     return firstValueFrom(this.http.delete(`${environment.apiUrl}/songs/${id}`));
+  }
+
+  createSong(song: any) {
+    return this.http.post<ISong>(`${environment.apiUrl}/songs`, song);
+  }
+
+  updateSong(id: any, song: any) {
+    return this.http.put<ISong>(`${environment.apiUrl}/songs/${id}`, song);
   }
 }

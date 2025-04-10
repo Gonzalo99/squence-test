@@ -54,5 +54,9 @@
     .actions__btn--delete {
       background-color: $red;
     }
+    .actions__btn--update {
+      margin-right: 10px;
+      background-color: $icons;
+    }
   }
 }

@@ -1,0 +1,115 @@
+<div class="create">
+  <div class="create__return">
+    <a [routerLink]="['/songs']">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+  </div>
+  <div class="create__title">
+    {{ title | translate }}
+  </div>
+  <div>
+    <div [formGroup]="form">
+      <div class="col-span-auto">
+        <mat-form-field>
+          <mat-label> {{ 'SONG.CREATE.TITLE' | translate }}</mat-label>
+          <input matInput formControlName="title" />
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('title')!.hasError('required') && form.get('title')!.touched">
+            {{ 'FORM.REQUIRED' | translate }}
+          </mat-error>
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('title')!.hasError('maxlength') && form.get('title')!.touched">
+            {{ 'FORM.MAX_LENGTH' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field
+          appearance="fill">
+          <mat-label>
+            {{ 'SONG.CREATE.GENRE' | translate }}
+          </mat-label>
+          <mat-select
+            multiple
+            formControlName="genre">
+            <mat-option
+              *ngFor="let genre of genres"
+              [value]="genre">
+              {{ genre }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('genre')!.hasError('required') && form.get('genre')!.touched">
+            {{ 'FORM.REQUIRED' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label> {{ 'SONG.CREATE.YEAR' | translate }}</mat-label>
+          <input matInput [matDatepicker]="dp" formControlName="year">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp
+                          startView="multi-year"
+                          (yearSelected)="chosenYearHandler($event, dp)"
+                          panelClass="example-month-picker">
+          </mat-datepicker>
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('year')!.hasError('required') && form.get('year')!.touched">
+            {{ 'FORM.REQUIRED' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label> {{ 'SONG.CREATE.DURATION' | translate }}</mat-label>
+          <input matInput type="number" formControlName="duration" />
+          <mat-error
+              class="text-danger"
+              *ngIf="form.get('duration')!.hasError('required') && form.get('duration')!.touched">
+              {{ 'FORM.REQUIRED' | translate }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label> {{ 'SONG.CREATE.RATING' | translate }}</mat-label>
+          <input matInput type="number" formControlName="rating" />
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('rating')!.hasError('required') && form.get('rating')!.touched">
+            {{ 'FORM.REQUIRED' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field
+          appearance="fill">
+          <mat-label>
+            {{ 'SONG.CREATE.ARTIST' | translate }}
+          </mat-label>
+          <mat-select
+            formControlName="artist">
+            <mat-option
+              *ngFor="let artist of artists"
+              [value]="artist.id">
+              {{ artist.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            class="text-danger"
+            *ngIf="form.get('artist')!.hasError('required') && form.get('artist')!.touched">
+            {{ 'FORM.REQUIRED' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button [disabled]="form.invalid" (click)="submitForm()">{{ title | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

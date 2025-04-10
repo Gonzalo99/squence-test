@@ -13,12 +13,33 @@
       "DELETE_TITLE": "Eliminar canción",
       "DELETE_CONTENT": "¿Está seguro de que desea eliminar esta canción?",
       "DELETE_SUCCESS": "Canción eliminada con éxito"
+    },
+    "CREATE-SONG": "Crear canción",
+    "EDIT-SONG": "Editar canción",
+    "CREATE": {
+      "TITLE": "Título",
+      "YEAR": "Año",
+      "DURATION": "Duración",
+      "RATING": "Valoración",
+      "ARTIST": "Artista",
+      "GENRE": "Género",
+      "SUCCESS": "Canción creada con éxito"
+    },
+    "EDIT": {
+      "SUCCESS": "Canción editada con éxito"
     }
   },
   "MODAL": {
     "OK": "Ok",
     "CONFIRM": "Confirmar",
     "CANCEL": "Cancelar"
+  },
+  "FORM": {
+    "REQUIRED": "Este campo es obligatorio",
+    "MIN_LENGTH": "Este campo debe tener al menos {min} caracteres",
+    "MAX_LENGTH": "Este campo excede el número máximo de caracteres permitidos",
+    "INVALID_EMAIL": "Correo electrónico no válido",
+    "INVALID_URL": "URL no válida"
   },
   "ERROR": {
     "NOT_FOUND": "No se encontró la canción",
