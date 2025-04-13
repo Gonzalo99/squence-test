@@ -1,3 +1,48 @@
 {
-  "HELLO_WORLD": "HOLA MUNDO"
+  "MENU": {
+    "SONGS": "Canciones",
+    "ARTISTS": "Artistas",
+    "RECORD-COMPANIES": "Compañías discográficas"
+  },
+  "SONG": {
+    "RECORD-COMPANIE": "Compañía discográfica",
+    "GENRE": "Género",
+    "COUNTRY": "País",
+    "RELEASE-DATE": "Fecha de lanzamiento",
+    "DELETE": {
+      "DELETE_TITLE": "Eliminar canción",
+      "DELETE_CONTENT": "¿Está seguro de que desea eliminar esta canción?",
+      "DELETE_SUCCESS": "Canción eliminada con éxito"
+    },
+    "CREATE-SONG": "Crear canción",
+    "EDIT-SONG": "Editar canción",
+    "CREATE": {
+      "TITLE": "Título",
+      "YEAR": "Año",
+      "DURATION": "Duración",
+      "RATING": "Valoración",
+      "ARTIST": "Artista",
+      "GENRE": "Género",
+      "SUCCESS": "Canción creada con éxito"
+    },
+    "EDIT": {
+      "SUCCESS": "Canción editada con éxito"
+    }
+  },
+  "MODAL": {
+    "OK": "Ok",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar"
+  },
+  "FORM": {
+    "REQUIRED": "Este campo es obligatorio",
+    "MIN_LENGTH": "Este campo debe tener al menos {min} caracteres",
+    "MAX_LENGTH": "Este campo excede el número máximo de caracteres permitidos",
+    "INVALID_EMAIL": "Correo electrónico no válido",
+    "INVALID_URL": "URL no válida"
+  },
+  "ERROR": {
+    "NOT_FOUND": "No se encontró la canción",
+    "UNKNOWN_ERROR": "Se ha producido un error"
+  }
 }

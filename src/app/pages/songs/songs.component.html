@@ -1,3 +1,10 @@
-<div>
-    <h1>{{ 'HELLO_WORLD' | translate }}</h1>
+<div class="list-songs">
+  <div *ngIf="songs" class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let song of songs">
+      <app-preview-song [song]="song" class="d-flex justify-content-center"></app-preview-song>
+    </div>
+  </div>
+  <div class="create-song" [routerLink]="['/create-song']">
+    <i class="bi bi-plus"></i>
+  </div>
 </div>

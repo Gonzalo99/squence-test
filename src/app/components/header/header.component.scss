@@ -1,0 +1,18 @@
+@import "../../../assets/vars";
+
+.header {
+  width: 100%;
+  padding: 15px 12px;
+  display: flex;
+  align-items: center;
+  .header__icon-menu {
+    font-size: 25px;
+    color: $icons;
+    cursor: pointer;
+  }
+  .header__title {
+    font-size: 20px;
+    color: $white;
+    margin-left: 10px;
+  }
+}

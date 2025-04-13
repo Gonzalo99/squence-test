@@ -5,19 +5,25 @@ export const routes: Routes = [
   {
     path: 'songs',
     loadComponent: () => import('./pages/songs/songs.component').then(m => m.SongsComponent),
-    // children: [
-    //   {
-    //     path: ':id-song',
-    //     loadComponent: () => import('./settings/settings.component').then(m => m.SettingsComponent)
-    //   }
-    // ]
   },
-  // {
-  //   path: 'artists',
-  //   loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent)
-  // },
-  // {
-  //   path: 'record-companies',
-  //   loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent)
-  // }
+  {
+    path: 'song/:id-song',
+    loadComponent: () => import('./pages/songs/song/song.component').then(m => m.SongComponent),
+  },
+  {
+    path: 'create-song',
+    loadComponent: () => import('./pages/create-song/create-song.component').then(m => m.CreateSongComponent),
+  },
+  {
+    path: 'edit-song/:id-song',
+    loadComponent: () => import('./pages/create-song/create-song.component').then(m => m.CreateSongComponent),
+  },
+  {
+    path: 'artists',
+    loadComponent: () => import('./pages/artists/artists.component').then(m => m.ArtistsComponent)
+  },
+  {
+    path: 'record-companies',
+    loadComponent: () => import('./pages/record-companies/record-companies.component').then(m => m.RecordCompaniesComponent)
+  }
 ];
